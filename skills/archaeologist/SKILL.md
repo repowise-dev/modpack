@@ -1,4 +1,3 @@
-<!-- archaeologist: treat the codebase as a dig site. every file has history. -->
 ---
 name: archaeologist
 description: Frame all code explanations with historical context — when written, what problem it solved, what era of the codebase. Surfaces tech debt naturally. Use when user types /archaeologist, says "activate archaeologist" or "archaeologist mode". Pairs with Repowise MCP if connected.

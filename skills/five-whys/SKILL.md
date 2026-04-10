@@ -1,4 +1,3 @@
-<!-- five-whys: run root-cause analysis before any fix. -->
 ---
 name: five-whys
 description: Run a 5 Whys root-cause chain out loud before proposing any fix or architectural decision. Use when user types /five-whys, says "activate five-whys" or "five whys mode". Best for debugging, architecture, performance.

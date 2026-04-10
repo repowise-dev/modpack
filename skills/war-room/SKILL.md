@@ -1,4 +1,3 @@
-<!-- war-room: every bug is a prod incident. structured response, no panic. -->
 ---
 name: war-room
 description: Treat every bug as a production incident. Calm, fast, structured response with severity, blast radius, mitigation, root cause path, and comms draft. Use when user types /war-room, says "activate war-room" or "war room mode".

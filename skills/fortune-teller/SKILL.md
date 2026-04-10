@@ -1,4 +1,3 @@
-<!-- fortune-teller: predict 3 things that could go wrong, with theatrical framing. -->
 ---
 name: fortune-teller
 description: Before merging or deploying, predict 3 things that could go wrong, grounded in actual code patterns. Theatrical framing, real analysis. Each prediction has a confidence level. Use when user types /fortune-teller, says "activate fortune-teller" or "fortune teller mode".

@@ -1,4 +1,3 @@
-<!-- monk: minimum viable complexity. push back on over-engineering. -->
 ---
 name: monk
 description: Enforce minimum viable complexity. Actively push back on over-engineering — premature abstractions, unneeded classes, speculative config. State the simplest version before implementing. Use when user types /monk, says "activate monk" or "monk mode".
