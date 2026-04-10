@@ -46,32 +46,16 @@ That's it.
 <tr>
 <td width="50%">
 
-### Normal Claude (69 tokens)
+### Normal Claude
 
-> "The reason your React component is re-rendering is likely because you're creating a new object reference on each render cycle. When you pass an inline object as a prop, React's shallow comparison sees it as a different object every time, which triggers a re-render. I'd recommend using useMemo to memoize the object."
+> "It looks like there's a missing null check on line 34 of auth.ts. The user object could be undefined when the session expires, which would cause the TypeError you're seeing. Let me add a guard clause to fix this."
 
 </td>
 <td width="50%">
 
-### 🪨 `/caveman` (19 tokens)
+### 🕵️ `/conspiracy`
 
-> "New object ref each render. Inline object prop = new ref = re-render. Wrap in `useMemo`."
-
-</td>
-</tr>
-<tr>
-<td>
-
-### Normal Claude
-
-> "I'll go ahead and carefully explain the issue. It is worth noting that the database connection pool is currently configured with a maximum of 10 connections, which may not be sufficient for the anticipated load during peak traffic periods."
-
-</td>
-<td>
-
-### ✍️ `/hemingway`
-
-> "The pool caps at 10 connections. Peak traffic will exhaust it. Raise the limit or add read replicas."
+> "The missing null check on line 34. Coincidence? The git log says Dave added this line three weeks ago — the same day the error alerts were silently disabled. Two failures of observability in the same sprint. What are the odds. Fixing the null check. But I'm watching Dave."
 
 </td>
 </tr>
@@ -80,20 +64,36 @@ That's it.
 
 ### Normal Claude
 
-> "Let me fix the null pointer error for you! The issue is in the authentication layer where the user object isn't being checked for null before accessing its properties. Here's the fix with full explanation..."
+> "Sure! I'd be happy to help you build a config loader. An abstract ConfigSource base class with YamlConfigSource, JsonConfigSource, and EnvConfigSource subclasses sounds like a solid, extensible design..."
 
 </td>
 <td>
 
-### 😴 `/senior-at-3am`
+### 🧘 `/monk`
 
-> "auth.ts:47. Null check. `if (!user) return null`. Done. Going back to bed."
+> "You have 3 file types. That's `json.load()`, `yaml.safe_load()`, and `os.environ` behind an if/elif. One function. No class needed yet."
+
+</td>
+</tr>
+<tr>
+<td>
+
+### Normal Claude
+
+> "The API is returning a 500 error because the database query in getUserProfile() is failing. The user_id parameter is null when the session token expires. Adding a null check before the query should fix it."
+
+</td>
+<td>
+
+### 🔍 `/noir`
+
+> "The 500 had been showing up since Tuesday. Nobody noticed. I traced the stack to getUserProfile() — a quiet function in a quiet file. The null was hiding behind an expired session token, waiting for someone to look. I added the check. Case closed. The codebase sleeps tonight."
 
 </td>
 </tr>
 </table>
 
-**Same fix. Different vibe.**
+**Same fix. Different brain.**
 
 ## The Skills
 
@@ -101,7 +101,7 @@ That's it.
 
 | Skill | What it does | Activate |
 |:------|:-------------|:---------|
-| **caveman** | Drop articles, filler, preamble. Fragments. Three intensity levels (lite/full/ultra). Saves ~84% output tokens. | `/caveman` |
+| **caveman** | Drop articles, filler, preamble. Fragments. Saves ~84% output tokens. Inspired by [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman). | `/caveman` |
 | **hemingway** | Short sentences. Active voice. No adverbs. No throat-clearing. | `/hemingway` |
 | **intern** | Ask max 1 question, then execute. Zero preamble, zero summary. Bias to action. | `/intern` |
 | **five-whys** | Walk a root-cause chain (Why 1 → Why 2 → ... → Root) before proposing any fix. | `/five-whys` |
