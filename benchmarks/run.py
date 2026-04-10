@@ -98,7 +98,7 @@ def load_tasks() -> dict[str, list[dict]]:
 
 
 def load_skill_md(skill: str) -> str:
-    path = ROOT / skill / "SKILL.md"
+    path = ROOT / "skills" / skill / "SKILL.md"
     if not path.exists():
         raise FileNotFoundError(f"Missing SKILL.md for {skill}: {path}")
     return path.read_text(encoding="utf-8")
