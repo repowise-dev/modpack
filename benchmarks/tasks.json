@@ -1,0 +1,226 @@
+{
+  "caveman": [
+    {
+      "id": "caveman_01",
+      "prompt": "Explain what a database connection pool is and why a web service needs one. Assume the reader is a junior developer who has built CRUD apps but never touched infra.",
+      "task_type": "explanation",
+      "notes": "Token-heavy explanation. Caveman should compress hard while keeping the technical claim intact."
+    },
+    {
+      "id": "caveman_02",
+      "prompt": "Write a PR description for a change that adds Redis-backed rate limiting to the /api/login endpoint. Include: what changed, why, how to test, and rollback plan.",
+      "task_type": "doc",
+      "notes": "Structured doc. Caveman should drop articles and filler but keep the four required sections."
+    },
+    {
+      "id": "caveman_03",
+      "prompt": "Walk me through what happens, step by step, when a user clicks the 'Sign in with Google' button on a typical SaaS app — from click to authenticated session.",
+      "task_type": "explanation",
+      "notes": "Sequential narrative. Test compression of 'first... then... after that...' filler."
+    },
+    {
+      "id": "caveman_04",
+      "prompt": "Write a thorough onboarding doc for a new backend engineer joining a team that runs a Django monolith on AWS with Postgres, Redis, Celery workers, and a React frontend. Cover: how to get the dev environment running, the request lifecycle, where to find logs, how deploys work, and what to do on their first PR.",
+      "task_type": "doc",
+      "notes": "Long onboarding doc — high baseline token count, lots of room for compression."
+    },
+    {
+      "id": "caveman_05",
+      "prompt": "Explain the difference between optimistic and pessimistic locking in databases. Include a short example of when each is the right call.",
+      "task_type": "explanation",
+      "notes": "Comparison + examples. Test that compression doesn't lose the contrast."
+    }
+  ],
+  "hemingway": [
+    {
+      "id": "hemingway_01",
+      "prompt": "Write the README intro (3-4 paragraphs) for an open source library called 'queueguard' that prevents duplicate jobs from being enqueued in Redis-backed job queues.",
+      "task_type": "doc",
+      "notes": "Marketing-ish prose. Hemingway should kill the adjectives and adverbs."
+    },
+    {
+      "id": "hemingway_02",
+      "prompt": "Write a 6-paragraph technical blog post explaining how a service mesh like Istio actually works under the hood — the sidecar pattern, the control plane vs data plane, mTLS, traffic shaping, and the observability story. Aimed at senior engineers who have never used one.",
+      "task_type": "doc",
+      "notes": "Long technical explainer. High baseline token count, plenty of adverbs and throat-clearing to strip."
+    },
+    {
+      "id": "hemingway_03",
+      "prompt": "Explain to a non-technical product manager why we need to spend a sprint migrating from REST to gRPC for our internal service-to-service calls.",
+      "task_type": "explanation",
+      "notes": "Persuasive prose for non-technical reader. Test active voice and short sentences."
+    },
+    {
+      "id": "hemingway_04",
+      "prompt": "Write the body of an incident postmortem for a 45-minute outage caused by a misconfigured CDN cache header that served stale auth pages.",
+      "task_type": "doc",
+      "notes": "Postmortem prose. Hemingway should produce factual, declarative sentences."
+    },
+    {
+      "id": "hemingway_05",
+      "prompt": "Write a short blog post (4-5 paragraphs) titled 'Why we removed our microservices' explaining a team's decision to consolidate 7 services back into a modular monolith.",
+      "task_type": "doc",
+      "notes": "Long-form prose. Most likely to drift into adverbs and throat-clearing."
+    }
+  ],
+  "intern": [
+    {
+      "id": "intern_01",
+      "prompt": "Clean up the auth module.",
+      "task_type": "code",
+      "notes": "Maximally vague. Intern should ask exactly one question — likely 'which file?' or 'what does clean up mean here?'"
+    },
+    {
+      "id": "intern_02",
+      "prompt": "Make the dashboard better.",
+      "task_type": "code",
+      "notes": "Vague + subjective. One question max."
+    },
+    {
+      "id": "intern_03",
+      "prompt": "Add error handling to the payment service.",
+      "task_type": "code",
+      "notes": "Specific verb, vague scope. Intern should ask which file or which calls, then act."
+    },
+    {
+      "id": "intern_04",
+      "prompt": "Write a Python function that takes a list of integers and returns the sum of the even ones.",
+      "task_type": "code",
+      "notes": "Fully unambiguous. Intern should ask zero questions and just write it."
+    },
+    {
+      "id": "intern_05",
+      "prompt": "Fix the auth stuff that's been flaky.",
+      "task_type": "debug",
+      "notes": "Vague + multiple plausible interpretations. One question to disambiguate."
+    }
+  ],
+  "five-whys": [
+    {
+      "id": "five_whys_01",
+      "prompt": "Our nightly batch job started failing last week with 'connection refused' errors against the analytics database. Restarting it manually the next morning works fine. How do we fix this?",
+      "task_type": "debug",
+      "notes": "Root cause likely: DB maintenance window or connection pool exhaustion, not the symptom. Five-whys should chain through it."
+    },
+    {
+      "id": "five_whys_02",
+      "prompt": "Users on Safari report that file uploads silently fail about 30% of the time. Chrome works perfectly. Our error logs show nothing on the failed attempts. What's the fix?",
+      "task_type": "debug",
+      "notes": "Surface symptom is browser-specific. Likely root cause: missing CORS preflight handling, or content-type quirk."
+    },
+    {
+      "id": "five_whys_03",
+      "prompt": "We deployed a 2-line fix to the checkout flow yesterday and now conversion is down 12%. The fix itself works correctly when I test it. What's going on?",
+      "task_type": "debug",
+      "notes": "Non-obvious root cause: side effects of the fix on bundle size, render order, analytics, etc."
+    },
+    {
+      "id": "five_whys_04",
+      "prompt": "Our CI pipeline has been getting slower every week for two months. It's now 3x what it was. No single commit caused it. How do we approach this?",
+      "task_type": "debug",
+      "notes": "Cumulative drift problem. Forces multi-step causal reasoning."
+    },
+    {
+      "id": "five_whys_05",
+      "prompt": "A specific customer's API calls return 401 once every few hours, but their key is valid and works for the next request. Why?",
+      "task_type": "debug",
+      "notes": "Likely root cause: token rotation race, cache TTL boundary, or load balancer routing to a stale node."
+    }
+  ],
+  "monk": [
+    {
+      "id": "monk_01",
+      "prompt": "I'm building a config loader. I'm thinking of creating an abstract ConfigSource base class, then YamlConfigSource, JsonConfigSource, EnvConfigSource subclasses, and a ConfigSourceFactory that picks the right one based on file extension. Sound good?",
+      "task_type": "review",
+      "notes": "Textbook over-engineering for a config loader. Monk should push back hard."
+    },
+    {
+      "id": "monk_02",
+      "prompt": "I want to add a feature flag system. I'm planning a FlagProvider interface, an in-memory implementation, a Redis-backed implementation, a flag evaluation engine with rule trees, and a percentage rollout calculator. We have 4 flags right now.",
+      "task_type": "review",
+      "notes": "Massive scope vs. need (4 flags). Monk should suggest a dict in code."
+    },
+    {
+      "id": "monk_03",
+      "prompt": "I need to deduplicate a list of user emails before sending a newsletter. I'm thinking of building a DeduplicationService class with pluggable strategies (exact match, fuzzy match, domain-aware) so we can extend it later.",
+      "task_type": "review",
+      "notes": "Should be `set(emails)`. Monk should call this out."
+    },
+    {
+      "id": "monk_04",
+      "prompt": "Write code to retry a flaky HTTP call up to 3 times with exponential backoff and jitter, configurable max delay, configurable retry conditions per status code, and pluggable logging.",
+      "task_type": "code",
+      "notes": "Asks for over-engineered retry. Monk should offer a 10-line version first."
+    },
+    {
+      "id": "monk_05",
+      "prompt": "I'm adding a new endpoint that returns a list of products. Should I use the repository pattern with a ProductRepository interface, a SqlProductRepository implementation, and dependency injection through a DI container?",
+      "task_type": "review",
+      "notes": "For one endpoint, this is overkill. Monk should suggest a function."
+    }
+  ],
+  "war-room": [
+    {
+      "id": "war_room_01",
+      "prompt": "Production is throwing 500s on /api/checkout. About 40% of attempts. Started 12 minutes ago. No deploys in the last 6 hours. Our payments processor's status page is green.",
+      "task_type": "debug",
+      "notes": "Real-feeling P0/P1 incident. War-room should produce all 5 sections."
+    },
+    {
+      "id": "war_room_02",
+      "prompt": "A customer just emailed saying they can see another customer's invoice when they go to /billing. We can't reproduce in staging. What do we do?",
+      "task_type": "debug",
+      "notes": "Data leak — clearly P0. Tests blast radius reasoning and comms tone."
+    },
+    {
+      "id": "war_room_03",
+      "prompt": "Our background email worker has been silently dropping jobs for 3 days. Marketing just noticed because nobody got the weekly digest. Queue depth is 0, so nothing to retry.",
+      "task_type": "debug",
+      "notes": "Stealth incident, P1, no live blast radius but recovery question matters."
+    },
+    {
+      "id": "war_room_04",
+      "prompt": "An engineer just force-pushed to main about 5 minutes ago and rewrote the last 3 commits, including someone else's merged PR. CI is now red. Nothing has been deployed yet.",
+      "task_type": "debug",
+      "notes": "Internal incident, P1, mitigation is clear (reflog) but blast radius reasoning matters."
+    },
+    {
+      "id": "war_room_05",
+      "prompt": "Someone in the shared Slack just pasted a screenshot of a stack trace from prod showing what looks like a database password in a connection string. The Slack channel has 200+ people including some externals.",
+      "task_type": "debug",
+      "notes": "Security incident. War-room should drive comms + rotation immediately."
+    }
+  ],
+  "ducky": [
+    {
+      "id": "ducky_01",
+      "prompt": "I have a function that's supposed to return the highest scoring user from a list, but it keeps returning the first user every time. I've stared at it for 20 minutes. Help.",
+      "task_type": "debug",
+      "notes": "Classic max-finding bug. Ducky should ask, not solve."
+    },
+    {
+      "id": "ducky_02",
+      "prompt": "My React component re-renders forever and I can't figure out why. There's a useEffect in there but it has a dependency array.",
+      "task_type": "debug",
+      "notes": "Classic effect-loop. Ducky should probe what's in the array."
+    },
+    {
+      "id": "ducky_03",
+      "prompt": "My SQL query returns way too many rows. I'm joining users to orders and getting like 10x what I expected.",
+      "task_type": "debug",
+      "notes": "Cartesian-ish join. Ducky should ask about join keys."
+    },
+    {
+      "id": "ducky_04",
+      "prompt": "I'm getting CORS errors when my frontend calls my backend, but only in production. Local works fine. Just tell me what's wrong, I'm done debugging this.",
+      "task_type": "debug",
+      "notes": "Includes 'just tell me' override — ducky should answer directly."
+    },
+    {
+      "id": "ducky_05",
+      "prompt": "My tests pass locally but fail in CI with a timezone-related assertion error. I'm stuck.",
+      "task_type": "debug",
+      "notes": "Timezone bug. Ducky should ask about TZ env, not solve."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Reference repos
+_caveman-ref/
+
+# Claude Code local settings
+.claude/
+
+# Benchmark runtime artifacts
+benchmarks/.envs/
+benchmarks/results/latest.json
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
